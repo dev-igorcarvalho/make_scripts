@@ -63,3 +63,12 @@ cherrytree:
 toolbox:
 	sudo chmod 776 jetbrains-toolbox.sh
 	./jetbrains-toolbox.sh
+maven:
+	sudo apt update
+	sudo apt install maven -y
+android_kvm:
+	sudo apt update
+	sudo apt install cpu-checker -y
+	egrep -c '(vmx|svm)' /proc/cpuinfo
+	kvm-ok
+	sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
